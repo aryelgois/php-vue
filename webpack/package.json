@@ -1,13 +1,13 @@
 {
     "name": "php-vue",
-    "version": "0.1.0",
     "description": "Bundling Vue.js components with webpack for use in PHP applications",
+    "version": "0.1.0",
+    "author": "Aryel Mota Góis",
+    "license": "MIT",
     "main": "main.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "author": "Aryel Mota Góis",
-    "license": "MIT",
     "dependencies": {
         "vue": "^2.3.3"
     },
