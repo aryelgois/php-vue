@@ -10,6 +10,7 @@ module.exports = function(env = {}) {
     entry: './src/main.js',
     output: {
       path: path.resolve(__dirname, '../public/assets'),
+      publicPath: 'http://localhost:8080/',
       filename: env.production ? 'js/main.min.js' : 'js/main.js'
     },
     module: {
@@ -58,7 +59,15 @@ module.exports = function(env = {}) {
         }
       }),
     ] : [
+      new webpack.HotModuleReplacementPlugin()
     ],
+    devServer: {
+      contentBase: false,
+      hot: true,
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      }
+    }
     devtool: env.production ? false : '#cheap-module-eval-source-map'
   };
 };
