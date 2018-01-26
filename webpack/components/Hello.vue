@@ -12,8 +12,11 @@ module.exports = {
 }
 </script>
 
-<style scoped>
+<style scoped lang="less">
+@vue: #41B883;
+
 p {
+  color: @vue;
   font-size: 2em;
   text-align: center;
 }
