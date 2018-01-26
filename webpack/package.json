@@ -7,8 +7,7 @@
     "main": "main.js",
     "scripts": {
         "dev": "webpack-dev-server",
-        "build": "webpack --env.production",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "build": "webpack --env.production"
     },
     "dependencies": {
         "vue": "^2.5.13"
