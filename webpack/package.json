@@ -4,7 +4,6 @@
     "version": "0.1.0",
     "author": "Aryel Mota Góis",
     "license": "MIT",
-    "main": "main.js",
     "scripts": {
         "dev": "webpack-dev-server",
         "build": "webpack --env.production"
