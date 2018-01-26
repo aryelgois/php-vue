@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../vendor/autoload.php';
+
 if (file_exists('assets/assets.json')) {
     $mode = 'production';
     $assets = json_decode(file_get_contents('assets/assets.json'), true);

@@ -1,0 +1,14 @@
+{
+    "name": "aryelgois/php-vue",
+    "description": "Webapp skeleton using PHP and Vue.js",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aryel Mota Góis",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.0"
+    }
+}
