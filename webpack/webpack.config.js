@@ -30,7 +30,7 @@ module.exports = function(env = {}) {
   }
 
   return {
-    entry: './src/main.js',
+    entry: './main.js',
     output: {
       path: path.resolve(__dirname, '../public/assets'),
       publicPath: 'http://localhost:8080/',
