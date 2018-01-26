@@ -7,6 +7,27 @@ module.exports = function(env = {}) {
     process.env.NODE_ENV = 'production';
   }
 
+  function makeStyleLoader(type) {
+    const cssLoader = {
+      loader: 'css-loader',
+      options: {
+        minimize: env.production
+      }
+    };
+    const loaders = [cssLoader];
+    if (type) {
+      loaders.push(type + '-loader');
+    }
+    if (env.production) {
+      return ExtractTextPlugin.extract({
+        use: loaders,
+        fallback: 'vue-style-loader'
+      });
+    } else {
+      return ['vue-style-loader'].concat(loaders);
+    }
+  }
+
   return {
     entry: './src/main.js',
     output: {
