@@ -36,6 +36,13 @@ module.exports = function(env = {}) {
         {
           test: /\.less$/,
           use: makeStyleLoader('less')
+        },
+        {
+          test: /\.(png|jpg)$/,
+          loader: 'file-loader',
+          options: {
+            name: 'images/[name].[ext]'
+          }
         }
       ]
     },
