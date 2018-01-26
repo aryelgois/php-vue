@@ -98,7 +98,7 @@ module.exports = function(env = {}) {
       headers: {
         'Access-Control-Allow-Origin': '*'
       }
-    }
+    },
     devtool: env.production ? false : '#cheap-module-eval-source-map'
   };
 };
