@@ -33,7 +33,7 @@ module.exports = function(env = {}) {
     entry: './main.js',
     output: {
       path: path.resolve(__dirname, '../public/assets'),
-      publicPath: 'http://localhost:8080/',
+      publicPath: env.production ? '.' : 'http://localhost:8080/',
       filename: env.production ? 'js/main.min.js?[chunkhash]' : 'js/main.js'
     },
     module: {
