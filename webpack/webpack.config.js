@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const AssetsPlugin = require('assets-webpack-plugin');
 
 module.exports = function(env = {}) {
   if (env.production) {
@@ -33,7 +34,7 @@ module.exports = function(env = {}) {
     output: {
       path: path.resolve(__dirname, '../public/assets'),
       publicPath: 'http://localhost:8080/',
-      filename: env.production ? 'js/main.min.js' : 'js/main.js'
+      filename: env.production ? 'js/main.min.js?[chunkhash]' : 'js/main.js'
     },
     module: {
       rules: [
@@ -64,7 +65,7 @@ module.exports = function(env = {}) {
           test: /\.(png|jpg)$/,
           loader: 'file-loader',
           options: {
-            name: 'images/[name].[ext]'
+            name: 'images/[name].[ext]?[hash]'
           }
         }
       ]
@@ -81,7 +82,12 @@ module.exports = function(env = {}) {
         }
       }),
       new ExtractTextPlugin({
-        filename: 'css/style.min.css'
+        filename: 'css/style.min.css?[contenthash]'
+      }),
+      new AssetsPlugin({
+        filename: 'assets.json',
+        path: path.resolve(__dirname, '../public/assets'),
+        fullPath: false
       })
     ] : [
       new webpack.HotModuleReplacementPlugin()
