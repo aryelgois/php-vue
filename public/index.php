@@ -16,7 +16,9 @@ if (file_exists('assets/assets.json')) {
 <?php endif; ?>
     </head>
     <body>
-        <div id="app"></div>
+        <div id="app">
+            <noscript>This app needs JavaScript to run</noscript>
+        </div>
         <script src="<?= $mode == 'production'
             ? '/assets/' . $assets['main']['js']
             : 'http://localhost:8080/js/main.js' ?>"></script>
