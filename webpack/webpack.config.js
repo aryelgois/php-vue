@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = function(env = {}) {
   if (env.production) {
@@ -58,6 +59,9 @@ module.exports = function(env = {}) {
           warnings: false
         }
       }),
+      new ExtractTextPlugin({
+        filename: 'css/style.min.css'
+      })
     ] : [
       new webpack.HotModuleReplacementPlugin()
     ],
