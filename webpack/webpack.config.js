@@ -23,6 +23,11 @@ module.exports = function(env = {}) {
               less: makeStyleLoader('less')
             }
           }
+        },
+        {
+          test: /\.js$/,
+          loader: 'babel-loader',
+          exclude: /node_modules/
         }
       ]
     },
