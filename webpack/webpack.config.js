@@ -12,6 +12,20 @@ module.exports = function(env = {}) {
       path: path.resolve(__dirname, '../public/assets'),
       filename: env.production ? 'js/main.min.js' : 'js/main.js'
     },
+    module: {
+      rules: [
+        {
+          test: /\.vue$/,
+          loader: 'vue-loader',
+          options: {
+            loaders: {
+              css: makeStyleLoader(),
+              less: makeStyleLoader('less')
+            }
+          }
+        }
+      ]
+    },
     plugins: env.production ? [
       new webpack.DefinePlugin({
         'process.env': {
