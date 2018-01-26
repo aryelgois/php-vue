@@ -10,7 +10,7 @@ if (file_exists('assets/assets.json')) {
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>PHP + Vue.JS</title>
+        <title>PHP + Vue.js</title>
 <?php if ($mode == 'production'): ?>
         <link rel="stylesheet" href="/assets/<?= $assets['main']['css'] ?>" />
 <?php endif; ?>
