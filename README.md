@@ -26,20 +26,10 @@ git checkout -b develop
 # add this repository remote and fetch its data
 git remote add aryelgois/php-vue https://github.com/aryelgois/php-vue.git
 git fetch aryelgois/php-vue
+# merge squash
+git merge --squash aryelgois/php-vue/master -X ours # --allow-unrelated-histories (for git >2.9)
+git commit # Title: 'Import aryelgois/php-vue', Body: Squash log git writes in commit editor
  ```
-
- * Then you can squash:
-
-  ```bash
-git merge --squash aryelgois/php-vue/master -X ours
-git commit -m 'Import aryelgois/php-vue'
-  ```
-
- * Or merge and have a compound history:
-
-  ```bash
-git merge aryelgois/php-vue/master -X ours # --allow-unrelated-histories (for git >2.9)
-  ```
 
 2. Install dependencies
 
