@@ -5,7 +5,5 @@ Vue.component('hello', Hello);
 
 var app = new Vue({
   el: '#app',
-  render (h) {
-    return h('hello', Hello);
-  }
+  render: h => h(Hello)
 });
