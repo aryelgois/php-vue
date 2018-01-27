@@ -8,6 +8,11 @@
         "dev": "webpack-dev-server",
         "build": "webpack --env.production"
     },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not ie <= 8"
+    ],
     "dependencies": {
         "vue": "^2.5.13"
     },
