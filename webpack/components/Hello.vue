@@ -12,7 +12,10 @@ module.exports = {
 }
 </script>
 
-<style scoped lang="less">
+<style
+  scoped
+  lang="less"
+>
 @vue: #41B883;
 
 p {
